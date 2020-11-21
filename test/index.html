@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test vue</title>
+</head>
+<body>
+  <div id="vm">
+    {{test | remove-accents | append('...')}}
+  </div>
+</body>
+<script src="./vue.js"></script>
+<script src="../index.js"></script>
+<script>
+  Vue.use(textFilter)
+  var vm = new Vue({
+    el: "#vm",
+    data:{
+      test: "côécou",
+      testNumber: 1,
+      textTest: "some Text"
+    }
+  })
+</script>
+</html>
