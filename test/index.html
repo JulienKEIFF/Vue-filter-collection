@@ -7,7 +7,8 @@
 </head>
 <body>
   <div id="vm">
-    {{testNumber | base(4) }}
+    {{textTest | currency('€', false, false) }}
+    {{ 1.3 | base(16)}} 
   </div>
 </body>
 <script src="./vue.js"></script>
@@ -15,13 +16,14 @@
 <script>
   Vue.use(textFilter);
   Vue.use(numberFilter);
+  Vue.use(utilsFilter);
   var vm = new Vue({
     el: "#vm",
     data:{
       test: "côécou",
       testNumber: 3,
       testArrayNumber: [1,2,3,4,5,6],
-      textTest: "some Text"
+      textTest: 212
     }
   })
 </script>

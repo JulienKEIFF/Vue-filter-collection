@@ -19,11 +19,11 @@ const textFilter = {
     });
 
     //Prepend some text
-    Vue.filter('prepend', function(value, valueToAppend, space = false){
-      if(!valueToAppend) return value;
+    Vue.filter('prepend', function(value, valueToPrepend, space = false){
+      if(!valueToPrepend) return value;
 
-      if(space) return valueToAppend + ' ' + value;
-      else return valueToAppend + value;
+      if(space) return valueToPrepend + ' ' + value;
+      else return valueToPrepend + value;
     });
 
     //Remove all occurence of string
@@ -178,4 +178,31 @@ const numberFilter = {
       return parseInt(value, targetBase);
     });
   }
+}
+
+const utilsFilter = {
+  install (Vue){
+
+    //Return msg if value is empty
+    Vue.filter('placeholder', function(value, msg){
+      if(!value && msg) return msg;
+      else if (value) return value;
+      else return '';
+    })
+
+    //Add currency symbol
+    Vue.filter('currency', function(value, currencySymbol = "$", symbolLeft = false, currencySpace = true){
+      if(!value) return value;
+      
+      if(symbolLeft){
+        if(currencySpace) return currencySymbol + ' ' + value;
+        else return currencySymbol + value;
+      }else{
+        if(currencySpace) return value + ' ' + currencySymbol;
+        else return value + currencySymbol;
+      } 
+
+    })
+  }
+
 }
