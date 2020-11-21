@@ -1,7 +1,7 @@
 {
   "name": "vue-filter-collection",
   "version": "1.0.0",
-  "description": "A Vue filter library with: 10 text filter, ",
+  "description": "A Vue filter library with: 10 text filter, 5 number filter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

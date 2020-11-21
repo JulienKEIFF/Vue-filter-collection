@@ -7,18 +7,20 @@
 </head>
 <body>
   <div id="vm">
-    {{test | remove-accents | append('...')}}
+    {{testNumber | base(4) }}
   </div>
 </body>
 <script src="./vue.js"></script>
 <script src="../index.js"></script>
 <script>
-  Vue.use(textFilter)
+  Vue.use(textFilter);
+  Vue.use(numberFilter);
   var vm = new Vue({
     el: "#vm",
     data:{
       test: "côécou",
-      testNumber: 1,
+      testNumber: 3,
+      testArrayNumber: [1,2,3,4,5,6],
       textTest: "some Text"
     }
   })

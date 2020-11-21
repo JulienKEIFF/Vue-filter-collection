@@ -115,11 +115,67 @@ const textFilter = {
 const numberFilter = {
   install (Vue) {
 
-    //Capitalize the first letter
-    Vue.filter('capitalize', function (value) {
-      if (!value) return '';
-      value = value.toString();
-      return value.charAt(0).toUpperCase() + value.slice(1);
+    //Make operation
+    Vue.filter('operator', function (value, operator, operatorNumber) {
+      if (!value) return value;
+      else if(!operatorNumber) return value;
+
+      if(typeof value === "number"){
+        switch(operator){
+          case '+':
+            return value + operatorNumber;
+          case '-':
+            return value - operatorNumber;
+          case '/':
+            if(operatorNumber === 0) console.error("Divide by 0 impossible");
+            else return value / operatorNumber;
+          case '*':
+            return value * operatorNumber;
+          case '%':
+            return value % operatorNumber;
+          default:
+            return value;
+        }
+      }
+    });
+
+    //Add all number in array
+    Vue.filter('array-sum', function(value){
+      if(!value) return value;
+      else if(typeof value !== "object") return value;
+
+      let tempSum = 0;
+      for (let i = 0; i < value.length; i++) {
+        const el = value[i];
+        if(typeof el === "number"){
+          tempSum = tempSum + el;
+        }
+      }
+      return tempSum;
+    });
+
+    //Ceil number
+    Vue.filter('ceil', function(value){
+      if(!value) return value;
+      else if(typeof value !== "number") return value;
+
+      return Math.ceil(value);
+    });
+
+    //Floor number
+    Vue.filter('floor', function(value){
+      if(!value) return value;
+      else if(typeof value !== "number") return value;
+
+      return Math.floor(value);
+    });
+
+    //Change the number base
+    Vue.filter('base', function(value, targetBase){
+      if(!value) return value;
+      else if(typeof value !== "number") return value;
+
+      return parseInt(value, targetBase);
     });
   }
 }
