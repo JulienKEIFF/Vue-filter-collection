@@ -1,8 +1,6 @@
 # Vue-filter-collection
 A collection of useful vue filter
 
-## Filters
-
 * [Install](#install)
     * [Direct include](#Direct-include)
 * [Filters](#Filters)
