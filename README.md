@@ -3,12 +3,12 @@ A collection of useful vue filter
 
 ## Filters
 
-* Install
-    * Direct include
-* Filters
-  * String filters (10)
-  * Number filters (5)
-  * Utils filters (2)
+* [Install](#install)
+    * [Direct include](#Direct-include)
+* [Filters](#Filters)
+  * [String filters (10)](#String-filters-(10))
+  * [Number filters (5)](#Number-filters-(5))
+  * [Utils filters (2)](#Utils-filters-(2))
 
 ## Install
 ---
@@ -28,18 +28,22 @@ Then you just need to call Vue.use with the desired component in parameter :
 Vue.use(textFilter);
 ```
 
-## String Filters (10)
+
+
+## Filters
+
+### String Filters (10)
 ---
 This is the list of all string filter and how to use it
 
-### capitalize
+#### capitalize
 This filter allows you to capitalize the first letter of the string:
 ```javascript
 {{ "someString" | capitalize }} 
 //=> "SomeString"
 ```
 
-### append
+#### append
 This filter allows you to append other string to the base string.
 You can pass two parameters :
 
@@ -54,7 +58,7 @@ You can pass two parameters :
 //=> "someString other string"
 ```
 
-### prepend
+#### prepend
 This filter allows you to prepend other string to the base string.
 You can pass two parameters :
 
@@ -69,7 +73,7 @@ You can pass two parameters :
 //=> "other string someString"
 ```
 
-### remove-text
+#### remove-text
 This filter allows you to remove value from the base string.
 You can pass one parameter :
 
@@ -80,7 +84,7 @@ You can pass one parameter :
 //=> "some"
 ```
 
-### replace
+#### replace
 This filter allows you to replace value in the entry string by an another string once or for all.
 You can pass three parameters :
 
@@ -96,7 +100,7 @@ You can pass three parameters :
 //=> "some replaced to replace the word 'replaced'"
 ```
 
-### trim
+#### trim
 This filter allows you to trim the string:
 
 ```javascript
@@ -104,7 +108,7 @@ This filter allows you to trim the string:
 //=> "some string"
 ```
 
-### truncate
+#### truncate
 This filter allows you to fix a max length value for the entry string. You can chain the "append" filter to add symbol. This filter have one parameter:
 
 * maxValueLength: The length max of the string
@@ -117,7 +121,7 @@ This filter allows you to fix a max length value for the entry string. You can c
 //=> "some strin..."
 ```
 
-### uppercase
+#### uppercase
 This filter allows you to transform all the entry string in uppercase characters.
 
 ```javascript
@@ -125,7 +129,7 @@ This filter allows you to transform all the entry string in uppercase characters
 //=> "SOME STRING"
 ```
 
-### lowercase
+#### lowercase
 This filter allows you to transform all the entry string in lowercase characters.
 
 ```javascript
@@ -133,7 +137,7 @@ This filter allows you to transform all the entry string in lowercase characters
 //=> "some string"
 ```
 
-### remove-accents
+#### remove-accents
 This filter allows you to remove all accents in a string.
 
 ```javascript
@@ -143,11 +147,11 @@ This filter allows you to remove all accents in a string.
 
 
 
-## Number Filters (5)
+### Number Filters (5)
 ---
 This is the list of all number filter and how to use it
 
-### operator
+#### operator
 This filter allows you to make operations. You can use :
 * '+' : Use it to do an addition
 * '-' : Use it to do a subtraction
@@ -164,28 +168,28 @@ This filter use a second number parameter like this:
 //=> 0
 ```
 
-### array-sum
+#### array-sum
 This filter allows you to addition all number item in array.
 ```javascript
 {{ [1,2,3,4,5,6] | array-sum() }} 
 //=> 21
 ```
 
-### ceil
+#### ceil
 This filter allows you to ceil your number.
 ```javascript
 {{ 1.3 | ceil }} 
 //=> 2
 ```
 
-### floor
+#### floor
 This filter allows you to ceil your number.
 ```javascript
 {{ 1.3 | floor }} 
 //=> 1
 ```
 
-### base
+#### base
 
 This filter allows you to change your number base. You can pass one parameter:
 * targetBase: The target base for the number conversion 
@@ -195,11 +199,11 @@ This filter allows you to change your number base. You can pass one parameter:
 //=> 1
 ```
 
-## Utils Filters (2)
+### Utils Filters (2)
 ---
 This is the list of all utils filter and how to use it
 
-### placeholder
+#### placeholder
 This filter allows you to make an placeholder if your value is empty. This filter take one parameter :
 * msg: The message you want to display
 
@@ -208,7 +212,7 @@ This filter allows you to make an placeholder if your value is empty. This filte
 //=> "This is a placeholder"
 ```
 
-### currency
+#### currency
 This filter allows you to append a currency symbol and where to place it (left or rigth). This filter take two parameter :
 * currencySymbol: The currency symbole to display ($ by default)
 * symbolLeft: bool to display the symbol on the left (false by default)
