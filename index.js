@@ -126,7 +126,10 @@ const numberFilter = {
           case '-':
             return value - operatorNumber;
           case '/':
-            if(operatorNumber === 0) console.error("Divide by 0 impossible");
+            if(operatorNumber === 0){
+              console.error("Divide by 0 impossible");
+              break
+            } 
             else return value / operatorNumber;
           case '*':
             return value * operatorNumber;
