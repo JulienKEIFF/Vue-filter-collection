@@ -94,7 +94,6 @@ const textFilter = {
       if(typeof value === "string"){
         let options = {
           '-' : ' ',
-          '-' : '_',
           'a' : 'á|à|ã|â|À|Á|Ã|Â',
           'e' : 'é|è|ê|É|È|Ê',
           'i' : 'í|ì|î|Í|Ì|Î',
