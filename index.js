@@ -116,9 +116,9 @@ const numberFilter = {
 
     //Make operation
     Vue.filter('operator', function (value, operator, operatorNumber) {
+      console.log(operatorNumber ? true : false)
       if (!value) return value;
-      else if(!operatorNumber) return value;
-
+      else if(typeof operatorNumber !== "number") return value;
       if(typeof value === "number"){
         switch(operator){
           case '+':
